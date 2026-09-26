@@ -39,7 +39,7 @@
               "minLength": 32,
               "maxLength": 44
             },
-            "example": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
+            "example": "8woKVbhwy3FvcGSMWdc5govMJE8rAoQnWt1g6USTpump"
           }
         ],
         "responses": {
@@ -671,10 +671,10 @@
       "get": {
         "operationId": "getSampleReport",
         "summary": "Fetch a sample safety report for the BONK token mint",
-        "description": "Returns a cached report for BONK so you can preview the output format. No payment needed.",
+        "description": "Returns a live report for the BONK token mint (DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263), cached for 15 minutes and wrapped with a short note, so you can preview the output format. No payment needed.",
         "responses": {
           "200": {
-            "description": "A sample report.",
+            "description": "A current report for BONK.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1071,118 +1071,6 @@
                         }
                       }
                     }
-                  }
-                },
-                "example": {
-                  "note": "Free sample. Paid reports work for any token mint.",
-                  "report": {
-                    "reportVersion": "1.0",
-                    "mint": "8woKVbhwy3FvcGSMWdc5govMJE8rAoQnWt1g6USTpump",
-                    "network": "solana-mainnet",
-                    "checkedAt": "2026-09-26T02:10:00.000Z",
-                    "token": {
-                      "name": "kediii",
-                      "symbol": "KED",
-                      "decimals": 6,
-                      "supply": "1000000000",
-                      "program": "spl-token",
-                      "knownAsset": null
-                    },
-                    "risk": {
-                      "level": "high",
-                      "safetyScore": 49
-                    },
-                    "verdict": "High risk. A single wallet holds 22% of the supply and could move the price sharply by selling (it may be an exchange, the team or a whale). The 10 largest wallets hold 39% of the supply combined, so a few holders control the price. The token hasn't graduated from its pump.fun bonding curve; most tokens never do, and prices swing hard at this stage. 1 more issue is listed in the findings. Automated on-chain checks only, not financial advice.",
-                    "findings": [
-                      {
-                        "id": "whale_wallet",
-                        "severity": "high",
-                        "title": "One wallet holds 22%",
-                        "detail": "A single wallet holds 22% of the supply and could move the price sharply by selling (it may be an exchange, the team or a whale)."
-                      },
-                      {
-                        "id": "concentrated_top10",
-                        "severity": "medium",
-                        "title": "Top 10 wallets hold 39%",
-                        "detail": "The 10 largest wallets hold 39% of the supply combined, so a few holders control the price."
-                      },
-                      {
-                        "id": "pumpfun_bonding_curve",
-                        "severity": "medium",
-                        "title": "Still on the pump.fun launch curve",
-                        "detail": "The token hasn't graduated from its pump.fun bonding curve; most tokens never do, and prices swing hard at this stage."
-                      },
-                      {
-                        "id": "very_new",
-                        "severity": "medium",
-                        "title": "Less than a day old",
-                        "detail": "The token was created less than a day ago, the riskiest window for rug pulls."
-                      }
-                    ],
-                    "flags": {
-                      "canMintMore": false,
-                      "canFreeze": false,
-                      "permanentDelegate": false,
-                      "nonTransferable": false,
-                      "pausable": false,
-                      "transferHook": false,
-                      "transferFeeBps": 0,
-                      "defaultFrozen": false,
-                      "metadataMutable": false
-                    },
-                    "authorities": {
-                      "mint": null,
-                      "freeze": null,
-                      "metadataUpdate": "TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM"
-                    },
-                    "extensions": [],
-                    "holders": {
-                      "source": "largest 20 token accounts",
-                      "coveredPct": 91.4,
-                      "largestWalletPct": 22.03,
-                      "top10WalletsPct": 38.5,
-                      "programControlledPct": 52.9,
-                      "burnedPct": 0,
-                      "top": [
-                        {
-                          "owner": "CszswHG5j1NKoWrAiBEFvFk2yzt8gpnbm2Xc8c28mzZM",
-                          "pct": 52.9,
-                          "kind": "program",
-                          "label": "pump.fun bonding curve"
-                        },
-                        {
-                          "owner": "7Jpx4VjHYVAXcRxav9SJrb5JJXRefisQtA4k6wbP6rma",
-                          "pct": 22.03,
-                          "kind": "wallet",
-                          "label": null
-                        },
-                        {
-                          "owner": "544y531yEfSJ25nd6gV3Jzhd7fKN3hd8JZhf7462TRK5",
-                          "pct": 9.12,
-                          "kind": "wallet",
-                          "label": null
-                        },
-                        {
-                          "owner": "ERcLbGz4mwkqgwNt3JvvUdLaFwAKqatFSSRFE2q6ikkP",
-                          "pct": 7.35,
-                          "kind": "wallet",
-                          "label": null
-                        }
-                      ]
-                    },
-                    "launch": {
-                      "platform": "pump.fun",
-                      "stage": "bonding-curve"
-                    },
-                    "age": {
-                      "exact": true,
-                      "createdAt": "2026-09-26T01:29:06.000Z",
-                      "days": 0.03
-                    },
-                    "limitations": [
-                      "Holder figures cover only the largest 20 token accounts."
-                    ],
-                    "disclaimer": "Automated on-chain checks, not financial advice. They can't detect off-chain promises, hidden team wallets, coordinated selling or every scam pattern."
                   }
                 }
               }
